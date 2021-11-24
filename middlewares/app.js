@@ -12,8 +12,13 @@ const auth = (req,res,next) =>{
 
 const autho = (permission) =>{
     return (req,res,next)=>{
-        console.log("autho");
-        res.send("autho")
+        const org = res.send.bind(res)
+        res.send= function (body) {
+            body.name  = "shubham meena"
+            console.log(body);
+            return org(body)
+        }
+        next()
     }
 }
 
@@ -32,6 +37,6 @@ express.get("/users/:email",(req,res)=>{
 })
 
 express.post("/users",auth ,autho("editor"),(req ,res )=>{
-   res.send("i am post")
+   res.send({name : "Dhaval"})
    console.log("i am post");
 })
