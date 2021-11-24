@@ -4,7 +4,7 @@ const users = require("./users.json")
 express.listen(8080,function () {
     console.log("runinig ");
 })
-const logger = (req,res,next) =>{
+const auth = (req,res,next) =>{
     console.log("before"+req.method);
     next()
     console.log("after");
@@ -12,11 +12,11 @@ const logger = (req,res,next) =>{
 
 
 
-express.use(logger )
+express.use(auth )
 express.get("/users",(req,res)=>{  
     console.log(
 
-        'insidr the route handler'
+        'insidr the route handler   I AM GET'
     );
     res.send(users)
 })
@@ -26,4 +26,6 @@ express.get("/users/:email",(req,res)=>{
     res.send(user)
 })
 
-
+express.post("/users",auth ,(req ,res )=>{
+    console.log("I am Post");
+})
