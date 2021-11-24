@@ -10,9 +10,14 @@ const auth = (req,res,next) =>{
     console.log("after");
     }
 
+const autho = (permission) =>{
+    return (req,res,next)=>{
+        console.log("autho");
+        res.send("autho")
+    }
+}
 
 
-express.use(auth )
 express.get("/users",(req,res)=>{  
     console.log(
 
@@ -26,6 +31,7 @@ express.get("/users/:email",(req,res)=>{
     res.send(user)
 })
 
-express.post("/users",auth ,(req ,res )=>{
-    console.log("I am Post");
+express.post("/users",auth ,autho("editor"),(req ,res )=>{
+   res.send("i am post")
+   console.log("i am post");
 })
