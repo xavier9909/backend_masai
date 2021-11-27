@@ -13,7 +13,7 @@ const userschema  = new mongoose.Schema({
   
     first_name: {type : String, required : true },
     last_name: {type : String, required : true },
-    email: {type : String, required : true },
+    email: {type : String, required : true,unique:true  },
     gender: {type : String, required : false, default : "Male" },
     age: {type : Number, required : true },
 },
@@ -52,16 +52,36 @@ const autho = (permission) =>{
 
 
 app.get("/users",async(req,res)=>{  
- const users = await User.find().lean().exec()
+    try {
+        const users = await User.find().lean().exec()
  res.send({users})
+    } catch (e) {
+        res.status(500).json({status: e.message})
+    }
+ 
 })
 
-app.get("/users/:email",(req,res)=>{
-    const user = users.filter((user)=>user.email===req.params.email)
-    res.send(user)
+app.get("/users/:id", async(req,res)=>{
+    const user = await User.findById(req.params.id).lean().exec()
+    res.send({user})
 })
 
 app.post("/users",async(req ,res )=>{
-  const user  =await  User.create(req.body) 
+    try {
+        const user  =await  User.create(req.body) 
   res.status(201).send(user)
+    } catch (error) {
+        res.status(500).json({status: error.message})
+    }
+  
+})
+
+
+app.patch("/users/:id",async(req,res)=>{
+    try {
+        const user = await User.findByIdAndUpdate(req.params.id,req.body)
+        res.status(201).send(user)
+    } catch (error) {
+        res.status(500).json({status: error.message})
+    }
 })
