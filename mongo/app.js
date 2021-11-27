@@ -1,10 +1,11 @@
-const express = require("express")();
-//const { application } = require("express");
-const mongoose  = require("mongoose")()
-const users = require("./users.json")
+const express = require("express");
+
+var app = express();
+const mongoose  = require("mongoose")
+
 
 const connect =()=>{
-    return mongodb.connect("mongodb://127.0.0.1:27017/test")
+    return mongoose.connect("mongodb://127.0.0.1:27017/test")
 }
 
 
@@ -15,12 +16,20 @@ const userschema  = new mongoose.Schema({
     email: {type : String, required : true },
     gender: {type : String, required : false, default : "Male" },
     age: {type : Number, required : true },
-})
+},
+{
+    versionKey: false,
+    timestamps: true,
+}
 
+)
+app.use(express.json());
 const User = mongoose.model("user",userschema)
 
 
-express.listen(8080,function () {
+
+app.listen(8080,async function () {
+    await connect()
     console.log("runinig ");
 })
 const auth = (req,res,next) =>{
@@ -42,20 +51,17 @@ const autho = (permission) =>{
 }
 
 
-express.get("/users",(req,res)=>{  
-    console.log(
-
-        'insidr the route handler   I AM GET'
-    );
-    res.send(users)
+app.get("/users",async(req,res)=>{  
+ const users = await User.find().lean().exec()
+ res.send({users})
 })
 
-express.get("/users/:email",(req,res)=>{
+app.get("/users/:email",(req,res)=>{
     const user = users.filter((user)=>user.email===req.params.email)
     res.send(user)
 })
 
-express.post("/users",auth ,autho("editor"),(req ,res )=>{
-   res.send({name : "Dhaval"})
-   console.log("i am post");
+app.post("/users",async(req ,res )=>{
+  const user  =await  User.create(req.body) 
+  res.status(201).send(user)
 })
