@@ -13,7 +13,7 @@
 /***/ "./src/calc.js":
 /*!*********************!*\
   !*** ./src/calc.js ***!
-  \*********************/ 
+  \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"add\": () => (/* binding */ add)\n/* harmony export */ });\nfunction add(a,b ){\r\n    return a+b;\r\n}\r\n\r\n\n\n//# sourceURL=webpack://day-1/./src/calc.js?");
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _calc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calc */ \"./src/calc.js\");\n\r\n\r\nconsole.log((0,_calc__WEBPACK_IMPORTED_MODULE_0__.add)(5,4));\n\n//# sourceURL=webpack://day-1/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _calc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calc */ \"./src/calc.js\");\n\r\n\r\nconsole.log((0,_calc__WEBPACK_IMPORTED_MODULE_0__.add)(5,4));\r\n\r\n\r\nconst h1 = document.createElement(\"h1\")\r\nh1.innerHTML = \"hello world\"\r\nh1.classList.add(\"red\")\r\ndocument.getElementById(\"root\").appendChild(h1)\r\n\n\n//# sourceURL=webpack://day-1/./src/index.js?");
 
 /***/ })
 
