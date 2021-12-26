@@ -1,1 +1,1 @@
-console.log("DGfb");
+(()=>{"use strict";console.log(9)})();
