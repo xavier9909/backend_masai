@@ -5,5 +5,13 @@ module.exports = {
         path : path.join(__dirname, "build"),
         filename: 'build.js' 
     },
-    mode : "development"
-}
+    mode : "development",
+    module:{
+        rules : [
+            {
+                test : /\.css$/,
+                use : ["style-loader","css-loader"]
+            }
+        ]
+    }
+    }
