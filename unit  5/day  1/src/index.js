@@ -10,6 +10,8 @@ console.log(add(5,4));
 // h1.classList.add("red")
 // document.getElementById("root").appendChild(h1)
 ReactDOM.render(
-    React.createElement("h1",{className: "red"}, "hello weeeee"),
+<h1  className='red' >ijiiigfg</h1>
+,
+  
  document.getElementById("root")
 )
