@@ -1,17 +1,105 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-<>
-<h1>Mobile</h1>
-<li>apple</li>
-<li>htc</li>
-<li>me</li>
-<li>oppo</li>
 
-</>
-  );
+import "./App.css";
+
+const App = () => {
+const [counter, setCounter] = useState(0)
+
+
+const c1 = () => {
+
+	setCounter(counter + 1)
 }
 
-export default App;
+
+const c2 = () => {
+
+	setCounter(counter - 1)
+}
+const c3 = () => {
+
+	setCounter(counter * 2)
+}
+const c4 = () => {
+
+	setCounter(counter  *0)
+}
+return (
+	<div style={{
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'center',
+	justifyContent: 'center',
+	fontSize: '300%',
+	position: 'absolute',
+	width: '100%',
+	height: '100%',
+	top: '-15%',
+	}}>
+	Counter App
+	<div style={{
+		fontSize: '120%',
+		position: 'relative',
+		top: '10vh',
+	}}>
+		{counter}
+	</div>
+	<div className="buttons">
+		<button style={{
+		fontSize: '60%',
+		position: 'relative',
+		top: '20vh',
+		marginRight: '5px',
+		backgroundColor: 'green',
+		borderRadius: '8%',
+		color: 'white',
+		}}
+		onClick={c1}>Increment</button>
+		<button style={{
+		fontSize: '60%',
+		position: 'relative',
+		top: '20vh',
+		marginLeft: '5px',
+		backgroundColor: 'red',
+		borderRadius: '8%',
+		color: 'white',
+		}}
+		onClick={c2}>Decrement</button>
+    <button style={
+      {
+        fontSize: '60%',
+		position:"relative",
+		top: '20vh',
+		marginLeft: '5px',
+		backgroundColor: 'blue',
+		borderRadius: '8%',
+		color: 'white',
+      }
+      
+    }onClick = {c3}>
+multiply 
+    </button>
+   
+    <button
+    style={
+      {
+        fontSize: '60%',
+		position:"relative",
+		top: '20vh',
+		marginLeft: '5px',
+		backgroundColor: 'blue',
+		borderRadius: '8%',
+		color: 'white',
+      }
+    }
+    onClick={c4}
+    >
+Reset
+    </button>
+	</div>
+	</div>
+)
+}
+
+export default App
