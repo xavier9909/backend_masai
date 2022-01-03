@@ -14,7 +14,6 @@ const c1 = () => {
 
 
 const c2 = () => {
-
 	setCounter(counter - 1)
 }
 const c3 = () => {
