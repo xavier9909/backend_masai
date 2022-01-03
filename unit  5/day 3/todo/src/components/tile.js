@@ -28,7 +28,7 @@ console.log(find(n,k,arr));
 
   }
   if (process.env.USERNAME === "sm798") {
-    runProgram(`10055 415455`);
+    runProgram(`1005 5155`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
