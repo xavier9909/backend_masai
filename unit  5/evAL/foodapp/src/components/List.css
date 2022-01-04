@@ -1,0 +1,28 @@
+.display{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-left:30%;
+    height: 250px;
+    overflow:scroll
+}
+
+
+.box{
+    display: flex;
+}
+
+.formStyle{
+    margin-top: 3%;
+    margin-left: 2%;
+    width: 10%;
+}
+
+.formStyle>input{
+    margin-bottom: 10px;
+}
+
+.lit{
+    width: 80%;
+    display: flex;
+}

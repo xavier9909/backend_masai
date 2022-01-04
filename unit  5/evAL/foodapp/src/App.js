@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import "./App.css";
+import './components/List.css';
+import './App.css'
+import { Form } from './components/Form';
+import {List} from './components/List';
+import {useState,useEffect} from "react"
 import Axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Recipe from "./components/Recipe";
 import Alert from "./components/Alert";
-
 function App() {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
@@ -15,7 +17,7 @@ function App() {
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
-  const getData = async () => {
+  var getData = async () => {
     if (query !== "") {
       const result = await Axios.get(url);
       if (!result.data.more) {
@@ -36,10 +38,21 @@ function App() {
     e.preventDefault();
     getData();
   };
-
-  return (
-    <div className="App">
-      <h1>Food Searching App</h1>
+  const [data,setData]=useState([]);
+  useEffect(()=>{
+    getData();
+  },[])
+  getData=()=>{
+    fetch(" http://localhost:3001/formData")
+    .then(d=>d.json())
+    .then(res=>{
+        console.log("res",res);
+        setData(res);
+    })
+    console.log(data);
+  }
+  return (<>
+   <h1>BONUS SEARCH FOOD BY EDAAM</h1>
       <form onSubmit={onSubmit} className="search-form">
         {alert !== "" && <Alert alert={alert} />}
         <input
@@ -56,7 +69,12 @@ function App() {
         {recipes !== [] &&
           recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe} />)}
       </div>
+    <h1 className="App">IDHAR RECIPE DAALNE KA </h1>
+    <div className="box">
+      <Form getData={getData}/>
+      <List data={data}/>
     </div>
+    </>
   );
 }
 
