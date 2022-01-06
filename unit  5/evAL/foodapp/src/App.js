@@ -32,17 +32,17 @@ function App() {
     }
   };
 
-  const onChange = e => setQuery(e.target.value);
+  var onChange = e => setQuery(e.target.value);
 
-  const onSubmit = e => {
+   var onSubmit = e => {
     e.preventDefault();
     getData();
   };
   const [data,setData]=useState([]);
   useEffect(()=>{
-    getData();
+    getDData();
   },[])
-  getData=()=>{
+ var  getDData=()=>{
     fetch(" http://localhost:3001/formData")
     .then(d=>d.json())
     .then(res=>{
@@ -71,7 +71,7 @@ function App() {
       </div>
     <h1 className="App">IDHAR RECIPE DAALNE KA </h1>
     <div className="box">
-      <Form getData={getData}/>
+      <Form getDData={getDData}/>
       <List data={data}/>
     </div>
     </>
