@@ -9,6 +9,7 @@ const handlechange = (e)=>{
 const handleclick = ()=>{
 getdata(text);
 }
+
 return (
 <>
 <input type="text" placeholder="Enter Input" onChange={handlechange} />
