@@ -1,13 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import { useState,useRef } from 'react';
+import { Form } from "./components/form"
 function App() {
 
   // rerender but not lose value  example 
 //   const test = useRef(1)
 //   const [,setD] = useState(1)
 //   console.log("ReRendered - " , test);
-//   return (
+ return (
 
 //     <div className="App">
 //      <button onClick={()=>{
@@ -19,6 +20,10 @@ function App() {
 // }}>render</button>
 //     </div>
 //   );
-}
+<>
+  <Form/>
+</>
+ )}
 
 export default App;
+
