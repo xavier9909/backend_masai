@@ -1,0 +1,85 @@
+{
+  "jobs": [
+    {
+      "title": "gdgfd",
+      "salary": "32523",
+      "description": "dfs",
+      "type": "sfsaf",
+      "location": "dsfsdaf",
+      "name": "sfkanns.",
+      "applicants": [
+        "roshan",
+        "rohan",
+        "sohan",
+        "rahul"
+      ],
+      "id": 2
+    },
+    {
+      "title": "farjgr",
+      "salary": "44",
+      "description": "saflir",
+      "type": "dskhfa",
+      "location": "sfoajf",
+      "name": "safilrnfa",
+      "applicants": [
+        "roshan",
+        "kunal",
+        "manju"
+      ],
+      "id": 3
+    },
+    {
+      "name": "abcd pvt lt",
+      "applicants": [],
+      "salary": "2000",
+      "type": "remote",
+      "title": "sd2",
+      "location": "noida",
+      "description": "this is job description",
+      "id": 4
+    },
+    {
+      "name": "abcd3 pvt lt",
+      "applicants": [],
+      "salary": "2000",
+      "type": "remote",
+      "title": "sd3",
+      "location": "mumbai",
+      "description": "this is job description",
+      "id": 5
+    },
+    {
+      "title": "mechanic",
+      "salary": "1000000",
+      "description": "this is job description",
+      "type": "remote",
+      "location": "patna",
+      "name": "company1",
+      "applicants": [
+        "swarnnika"
+      ],
+      "id": 6
+    },
+    {
+      "name": "company2",
+      "applicants": [],
+      "salary": "30000",
+      "type": "sd3",
+      "title": "just a titile",
+      "location": "patna",
+      "description": "this is another dectriotgr",
+      "id": 7
+    },
+    {
+      "name": "company4",
+      "applicants": [],
+      "salary": "28000",
+      "type": "ransdome",
+      "title": "another title 2",
+      "location": "mumbai",
+      "description": "this is job desc",
+      "id": 8
+    }
+  ]
+}
